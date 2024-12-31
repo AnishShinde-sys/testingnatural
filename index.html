@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Natural Python IDE</title>
+
+  <!-- CodeMirror CSS -->
+  <link rel="stylesheet" href="codemirror/codemirror.css" />
+  <!-- Our custom style -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="ide-container">
+    <!-- Top Navigation Bar -->
+    <div class="top-nav">
+      <div class="nav-left">
+        <!-- Add branding/title or nav items here -->
+        <span style="color: var(--accent); font-weight: bold;">Natural Python IDE</span>
+      </div>
+
+      <div class="nav-right">
+        <!-- Example Buttons -->
+        <button id="runCode" class="run-btn">Run</button>
+        <button id="clearOutput" class="icon-btn">Clear</button>
+        <button id="themeToggle" class="icon-btn">Toggle Theme</button>
+      </div>
+    </div>
+
+    <!-- Main Content with Editor -->
+    <div class="main-content">
+      <div class="editor-area">
+        <!-- Hidden <textarea> that CodeMirror will replace -->
+        <textarea id="codeEditor"></textarea>
+      </div>
+    </div>
+
+    <!-- Output Panel -->
+    <div class="output-panel">
+      <div class="panel-header">
+        <span class="panel-title">Output</span>
+        <div class="panel-actions">
+          <span id="progressText">0%</span>
+          <div class="progress-wrapper">
+            <div class="progress-bar" id="progressBar"></div>
+          </div>
+        </div>
+      </div>
+      <div id="output" class="output-content"></div>
+    </div>
+
+    <!-- Status Bar -->
+    <div class="status-bar">
+      <div class="status-left">
+        <span id="cursorPos">Ln 1, Col 1</span>
+      </div>
+      <div class="status-right">
+        <!-- Additional info or mode toggles can go here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- CodeMirror JS -->
+  <script src="codemirror/codemirror.js"></script>
+  <script src="codemirror/python.js"></script>
+
+  <!-- Our main logic -->
+  <script src="script.js"></script>
+</body>
+</html>
