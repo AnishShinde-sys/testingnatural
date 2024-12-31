@@ -2,13 +2,15 @@
 
 import sys
 import re
+import os
 from openai import OpenAI
 
 ###########################################
 # 1) Create an OpenAI client with your API key
+#    (Read from an environment variable, not hard-coded)
 ###########################################
 client = OpenAI(
-    api_key="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"
+    api_key=os.environ.get("OPENAI_API_KEY")  # Use environment variable here
 )
 
 ###########################################
